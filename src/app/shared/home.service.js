@@ -1,6 +1,6 @@
 'use strict';
 
-blogApp.
+blogApp.factory('PostsService', function($resource){
 	return $resource('http://jsonplaceholder.typicode.com/:entity/:id',
 		{
 			id: '@id',

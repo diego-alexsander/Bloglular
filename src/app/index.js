@@ -1,8 +1,7 @@
 'use strict';
 
-var blogApp = angular.module('blog', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute']);
-  
-  blogApp.config(function ($routeProvider) {
+var blogApp = angular.module('blog', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute'])
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/components/home/home-blog.html',
