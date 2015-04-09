@@ -1,11 +1,15 @@
 'use strict';
 
-angular.module('blog', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute'])
+var blogApp = angular.module('blog', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/main/home-blog.html',
-        controller: 'MainCtrl'
+        templateUrl: 'app/components/home/home-blog.html',
+        controller: 'HomeCtrl'
+      })
+      .when('/post/:id', {
+        templateUrl: 'app/components/post/post.html',
+        controller: 'PostCtrl'
       })
       .otherwise({
         redirectTo: '/'
