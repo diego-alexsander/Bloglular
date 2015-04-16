@@ -1,23 +1,35 @@
 'use strict';
 
 blogApp.factory('PostsService', function($resource){
-	return $resource('http://jsonplaceholder.typicode.com/:entity/:id',
+	return $resource('http://jsonplaceholder.typicode.com/:comp/:id/:subComp/',
 		{
-			id: '@id',
-			entity: '@entity'
+			id: '@id'
 		},{
-			listaPosts: {
+			getComments: {
 				method: 'GET',
 				isArray: true,
 				params: {
-					entity: 'posts'
+					comp: 'posts',
+					subComp: 'comments'
 				}
 			},
-			postById: {
+			addComment: {
+				method: 'POST',
+				params: {
+					comp: 'comments'
+				}
+			},
+			getPosts: {
+				method: 'GET',
+				isArray: true,
+				params: {
+					comp: 'posts'
+				}
+			},
+			getPostById: {
 				method: 'GET',
 				params: {
-					entity: 'posts',
-					id: 'id'
+					comp: 'posts'
 				}
 			}
 		}

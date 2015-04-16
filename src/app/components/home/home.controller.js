@@ -1,7 +1,7 @@
 'use strict';
 
 blogApp.controller('HomeCtrl', ['$scope', 'PostsService', function ($scope, PostsService) {	
-	PostsService.listaPosts(function (data) {
+	PostsService.getPosts(function (data) {
 		$scope.posts = data;
 	});
 }]);
